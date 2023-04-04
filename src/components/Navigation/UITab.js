@@ -12,12 +12,9 @@
 import { StyleSheet } from 'react-native';
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import HomeScreen from '../screens/HomeScreen';
-import PolicyScreen from '../screens/PolicyScreen';
-import TransactionHistory from '../screens/TransactionHistoryScreen';
-import AccountScreen from '../screens/AccountScreen';
-import { colors } from '../constants';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import { AccountScreen, HomeScreen, PolicyScreen, TransactionHistoryScreen } from '../../screens';
+import { colors } from '../../constants';
 
 const Tab = createBottomTabNavigator();
 const screenOptions = ({route}) => ({
@@ -68,7 +65,7 @@ export default function UITab(props) {
         />
         <Tab.Screen 
             name="TransactionHistoryScreen" 
-            component={TransactionHistory} 
+            component={TransactionHistoryScreen} 
             options={{ 
                 tabBarLabel: 'Lịch sử giao dịch',
                 tabBarIcon: ({focused, color, size}) => (

@@ -10,7 +10,7 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import UITab from './src/components/UITab';
+import UITab from './src/components/Navigation/UITab';
 
 const Stack = createNativeStackNavigator();
 

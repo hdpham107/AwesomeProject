@@ -6,7 +6,7 @@
 import { Button, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
-export default function TransactionHistory({navigation}) {
+export default function TransactionHistoryScreen({navigation}) {
   return (
     <View>
       <Text>TransactionHistory</Text>
