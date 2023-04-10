@@ -5,43 +5,51 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable eol-last */
 /* eslint-disable semi */
-import { StyleSheet, View } from 'react-native';
-import React from 'react';
-import ActionItem from '../ActionItem';
+import { StyleSheet, View } from "react-native";
+import React from "react";
+import ActionItem from "../ActionItem";
+import { images } from "../../constants";
 
 const actionItems = [
   {
-    label: 'Nạp',
-    icon: 'star',
+    label: "Nạp",
+    icon: "star",
+    urlImg: `${images.deposit}`,
   },
   {
-    label: 'Rút',
-    icon: 'star',
+    label: "Rút",
+    icon: "star",
+    urlImg: `${images.withdraw}`,
   },
   {
-    label: 'Chuyển',
-    icon: 'star',
+    label: "Chuyển",
+    icon: "star",
+    urlImg: `${images.transfer}`,
   },
   {
-    label: 'Thanh toán',
-    icon: 'star',
+    label: "Thanh toán",
+    icon: "star",
+    urlImg: `${images.pay}`,
   },
 ];
 
 export default function ActionList() {
   return (
-    <View
-      style={{
-        flexDirection: 'row',
-        justifyContent: 'space-around',
-        height: 100,
-        padding: 20,
-      }}>
+    <View style={styles.container}>
       {actionItems.map((item, index) => {
-        return (<ActionItem item={item} key={index} />)
+        return <ActionItem item={item} key={index} />;
       })}
     </View>
-  )
+  );
 }
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  container: {
+    flexDirection: "row",
+    justifyContent: "space-around",
+    alignItems: 'center',
+    // backgroundColor: 'red',
+    marginHorizontal: 17,
+    marginVertical: 30,
+  },
+});

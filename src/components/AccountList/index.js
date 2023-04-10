@@ -8,30 +8,26 @@
 import { StyleSheet, View } from "react-native";
 import React from "react";
 import AccountItem from "../AccountItem";
+import { images } from "../../constants";
 
 const accountList = [
   {
     label: "Ví Apec",
     icon: "star",
     money: "***********",
+    urlImg: `${images.wallet}`,
   },
   {
     label: "Hoa hồng",
     icon: "star",
-    money: "12345678901",
+    money: "***********",
+    urlImg: `${images.commission}`,
   },
 ];
 
 export default function AccountList() {
   return (
-    <View
-      style={{
-        flexDirection: "row",
-        justifyContent: "center",
-        height: 100,
-        padding: 20,
-      }}
-    >
+    <View style={styles.container}>
       {accountList.map((item, index) => {
         if (index === 0) {
           return <AccountItem item={item} key={index} left={true} />;
@@ -43,4 +39,12 @@ export default function AccountList() {
   );
 }
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container: {
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
+    marginTop: 8,
+    // backgroundColor: 'red',
+  },
+});

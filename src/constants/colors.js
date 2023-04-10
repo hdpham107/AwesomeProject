@@ -3,6 +3,6 @@
 /* eslint-disable eol-last */
 export default {
     primary: '#007bff',
-    inactive: '#6c757d',
+    inactive: '#000000',
     backgroundHome: '#D3FBFF',
 }

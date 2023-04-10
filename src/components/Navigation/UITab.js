@@ -9,18 +9,17 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable eol-last */
 /* eslint-disable semi */
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Image } from 'react-native';
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import Icon from 'react-native-vector-icons/FontAwesome';
 import { AccountScreen, HomeScreen, PolicyScreen, TransactionHistoryScreen } from '../../screens';
-import { colors } from '../../constants';
+import { colors, images } from '../../constants';
 
 const Tab = createBottomTabNavigator();
 const screenOptions = ({route}) => ({
     headerShown: false,
     tabBarActiveTintColor: colors.primary,
-    tabBarInactiveTintColor: colors.primary,
+    tabBarInactiveTintColor: colors.inactive,
     // tabBarIcon: ({focused, color, size}) => {
     //     let screenName = route.name
     //     let iconName = "user";
@@ -48,8 +47,10 @@ export default function UITab(props) {
             component={HomeScreen} 
             options={{
                 tabBarLabel: 'Trang chủ', 
+                tabBarLabelStyle: {...styles.tabBarLabel},
                 tabBarIcon: ({focused, color, size}) => (
-                    <Icon name="home" size={23}  color={focused ? colors.primary : colors.inactive} />
+                    // <Icon name="home" size={23}  color={focused ? colors.primary : colors.inactive} />
+                    <Image source={images.home} style={styles.tabBarIcon} />
                 )
             }}
         />
@@ -58,8 +59,10 @@ export default function UITab(props) {
             component={PolicyScreen} 
             options={{ 
                 tabBarLabel: 'Chính sách', 
+                tabBarLabelStyle: {...styles.tabBarLabel},
                 tabBarIcon: ({focused, color, size}) => (
-                    <Icon name="star" size={23}  color={color} />
+                    // <Icon name="star" size={23}  color={color} />
+                    <Image source={images.policy} style={styles.tabBarIcon} />
                 )
             }}
         />
@@ -68,8 +71,10 @@ export default function UITab(props) {
             component={TransactionHistoryScreen} 
             options={{ 
                 tabBarLabel: 'Lịch sử giao dịch',
+                tabBarLabelStyle: {...styles.tabBarLabel},
                 tabBarIcon: ({focused, color, size}) => (
-                    <Icon name="history" size={23}  color={color} />
+                    // <Icon name="history" size={23}  color={color} />
+                    <Image source={images.history} style={styles.tabBarIcon} />
                 )
             }}
         />
@@ -78,8 +83,10 @@ export default function UITab(props) {
             component={AccountScreen} 
             options={{ 
                 tabBarLabel: 'Tài khoản',
+                tabBarLabelStyle: {...styles.tabBarLabel},
                 tabBarIcon: ({focused, color, size}) => (
-                    <Icon name="user" size={23}  color={color} />
+                    // <Icon name="user" size={23}  color={color} />
+                    <Image source={images.account} style={styles.tabBarIcon} />
                 )
             }}
         />
@@ -87,4 +94,16 @@ export default function UITab(props) {
   )
 }
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+    tabBarLabel: {
+        // color: '#000',
+        fontSize: 8,
+        fontWeight: '400',
+        lineHeight: 10,
+    },
+    // tabBarIcon: {
+    //     width: '100%',
+    //     height: 26,
+    //     resizeMode: 'contain'
+    // }
+})

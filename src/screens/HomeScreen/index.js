@@ -5,7 +5,7 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable eol-last */
 /* eslint-disable semi */
-import { StyleSheet, View } from "react-native";
+import { SafeAreaView, StyleSheet, View, ScrollView } from "react-native";
 import React from "react";
 import ProductList from "../../components/ProductList";
 import { colors } from "../../constants";
@@ -15,21 +15,22 @@ import Banner from "../../components/Banner";
 
 export default function HomeScreen({ navigation }) {
   return (
-    <View style={styles.container}>
-      <View style={{ flex: 2, color: "black"}}>
+    <SafeAreaView style={styles.container}>
+      <View style={styles.headerView}>
         <Banner />
       </View>
 
-      <View style={{ flex: 9, backgroundColor: colors.backgroundHome }}>
-        <View style={{}}>
-          <AccountList />
-          <ActionList />
-        </View>
-        <View style={{ flex: 7 }}>
-          <ProductList />
-        </View>
-      </View>
-    </View>
+      <ScrollView style={styles.scrollView}>
+        {/* <View style={styles.accountView}> */}
+        <AccountList />
+        <ActionList />
+        {/* </View> */}
+
+        {/* <View style={styles.productView}> */}
+        <ProductList />
+        {/* </View> */}
+      </ScrollView>
+    </SafeAreaView>
   );
 }
 
@@ -37,13 +38,13 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-  item: {
-    backgroundColor: "#f9c2ff",
-    padding: 20,
-    marginVertical: 8,
-    marginHorizontal: 16,
+  headerView: {
+    // flex: 1
   },
-  title: {
-    fontSize: 32,
+  scrollView: {
+    //  flex: 1,
+    backgroundColor: colors.backgroundHome,
   },
+  // accountView: { flex: 2, padding: 5 },
+  // productView: { flex: 7 },
 });
