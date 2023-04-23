@@ -12,8 +12,9 @@
 import { StyleSheet, Image } from 'react-native';
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { AccountScreen, HomeScreen, PolicyScreen, TransactionHistoryScreen } from '../../screens';
+import { AccountScreen, PolicyScreen, TransactionHistoryScreen } from '../../screens';
 import { colors, images } from '../../constants';
+import HomeScreen2 from '../../screens/HomeScreen2';
 
 const Tab = createBottomTabNavigator();
 const screenOptions = ({route}) => ({
@@ -44,7 +45,7 @@ export default function UITab(props) {
     <Tab.Navigator screenOptions={screenOptions}>
         <Tab.Screen 
             name="HomeScreen" 
-            component={HomeScreen} 
+            component={HomeScreen2} 
             options={{
                 tabBarLabel: 'Trang chủ', 
                 tabBarLabelStyle: {...styles.tabBarLabel},
