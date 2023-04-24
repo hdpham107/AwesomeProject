@@ -3,7 +3,6 @@ import React, { FC } from 'react';
 import LinearGradient from 'react-native-linear-gradient';
 import { images } from '../../constants';
 import { Wallet } from '../../models/Wallet';
-
 export interface Props {
     wallet?: Wallet,
 }
@@ -24,7 +23,7 @@ const WalletItem: FC<Props> = (props) => {
                     {/* Ví tiền */}
                     {wallet.name}
                 </Text>
-                <Image source={require('../../assets/images/icon_cash_wallet.png')} style={styles.icon} />
+                <Image source={wallet.iconUri} style={styles.icon} />
                 <Text style={styles.balance}>
                     {/* 50.000.000 */}
                     {wallet.walletDetail.balance.toLocaleString('vn-VN')}
@@ -67,6 +66,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         backgroundColor: '#FFFFFF',
         paddingHorizontal: 10,
+        marginHorizontal: 10,
         borderRadius: 20,
         // box shadow start
         shadowColor: '#000',
@@ -77,7 +77,7 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.51,
         shadowRadius: 13.16,
 
-        elevation: 20,
+        elevation: 5,
         // box shadow end
     },
     title: {

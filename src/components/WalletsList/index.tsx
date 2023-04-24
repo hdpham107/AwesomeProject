@@ -1,4 +1,4 @@
-import { StyleSheet, View, Text } from 'react-native';
+import { StyleSheet, View, Text, ScrollView } from 'react-native';
 import React, { FC } from 'react';
 import { Wallet } from '../../models/Wallet';
 import WalletItem from '../WalletItem';
@@ -13,6 +13,17 @@ const WalletList: FC<Props> = (props) => {
     console.log(walletList);
 
     if (walletList && walletList.length > 0) {
+        if (walletList.length > 3) {
+            return (
+                <ScrollView style={styles.scrollView} horizontal={true}>
+                    <View style={styles.container}>
+                        {walletList?.map((item, index) => {
+                            return <WalletItem wallet={item} key={index} />;
+                        })}
+                    </View>
+                </ScrollView>
+            );
+        }
         return (
             <View style={styles.container}>
                 {walletList?.map((item, index) => {
@@ -26,14 +37,15 @@ const WalletList: FC<Props> = (props) => {
             <Text>Loading ...</Text>
         </View>
     );
-
 };
 
 export default WalletList;
 
 const styles = StyleSheet.create({
+    scrollView: {},
     container: {
         flexDirection: 'row',
-        justifyContent: 'space-around',
+        justifyContent: 'center',
+        alignItems: 'center',
     },
 });

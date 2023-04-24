@@ -1,3 +1,16 @@
 {
-  "extends": "@tsconfig/react-native/tsconfig.json"
+  "extends": "@tsconfig/react-native/tsconfig.json",
+  "compilerOptions": {
+    "strict": true,
+    "baseUrl": ".",
+    "paths": {
+      // This needs to be mirrored in babel.config.js
+      // Components is a directory with sub directories
+      "components/*": ["src/components/*"],
+
+      // We want to expose the exports of the buttons index file
+      "images": ["src/constants/images.js"],
+      "src/*": ["src/*"]
+    }
+  }
 }

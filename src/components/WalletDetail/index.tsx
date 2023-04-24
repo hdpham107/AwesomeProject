@@ -17,14 +17,15 @@ const WalletDetail: FC<Props> = (props) => {
     return (
         <View style={styles.container}>
             <LinearGradient
-                start={{ x: 0.0, y: 0.25 }}
-                end={{ x: 0.5, y: 1.0 }}
-                locations={[0, 0.5, 0.6]}
-                colors={['#0034ED', '#54B0F3', '#0D6EFF', '#25CBFF']}
+                start={{ x: 1, y: 0.4 }}
+                end={{ x: 0.1, y: 0.65 }}
+                locations={[0, 0.20, 0.40]}
+                // colors={['#0034ED', '#0D6EFF', '#54B0F3', '#25CBFF']}
+                colors={['#0D6EFF', '#54B0F3', '#25CBFF']}
                 style={styles.linearGradient}>
 
                 <View style={styles.top}>
-                    <Image source={require('../../assets/images/icon_cash_wallet.png')} style={styles.topImgLeft} />
+                        <Image source={require('../../assets/images/icon_cash_wallet.png')} style={styles.topImgLeft} />
                     <View style={styles.topText}>
                         <Text style={styles.title}>
                             {/* Ví thưởng */}
@@ -79,7 +80,7 @@ const WalletDetail: FC<Props> = (props) => {
                         </View>
                     </View>
                     <View style={styles.level}>
-                        <Image source={images.walletLevel} />
+                        <Image source={images.walletLevel} style={styles.levelImg} />
                     </View>
                 </View>
 
@@ -121,7 +122,7 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.51,
         shadowRadius: 13.16,
 
-        elevation: 20,
+        elevation: 5,
         // box shadow end
     },
     // TOP
@@ -129,8 +130,10 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-        paddingBottom: 12,
-        paddingTop: 14,
+        // paddingBottom: 12,
+        paddingBottom: 6,
+        // paddingTop: 14,
+        paddingTop: 7,
     },
     topImgLeft: {
         width: 56,
@@ -174,7 +177,9 @@ const styles = StyleSheet.create({
         justifyContent: 'flex-start',
         alignItems: 'center',
     },
-    content: {},
+    content: {
+        flex: 1,
+    },
     balanceView: {
         paddingBottom: 8,
     },
@@ -210,16 +215,24 @@ const styles = StyleSheet.create({
         paddingBottom: 10,
     },
     level: {
-        width: 188,
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    levelImg: {
+        width: '100%',
+        resizeMode: 'contain',
     },
     bottom: {
         alignItems: 'center',
         justifyContent: 'center',
-        marginBottom: 17,
+        // marginBottom: 17,
+        marginBottom: 8,
     },
     button: {
         width: '100%',
-        paddingVertical: 20,
+        // paddingVertical: 20,
+        paddingVertical: 10,
         backgroundColor: 'rgba(28, 117, 188, 0.3)',
         borderRadius: 10,
         // box shadow start

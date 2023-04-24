@@ -29,10 +29,11 @@ const styles = StyleSheet.create({
         justifyContent: 'flex-start',
         width: 80,
         height: 80,
-        paddingVertical: 10,
     },
     icon: {
-        margin: 5,
+        width: '50%',
+        height: '50%',
+        resizeMode: 'contain',
     },
     label: {
         fontFamily: 'Tahoma',
@@ -42,5 +43,8 @@ const styles = StyleSheet.create({
         lineHeight: 16,
         color: 'rgba(0, 0, 0, 0.7)',
         textAlign: 'center',
+
+        marginTop: 5,
+        width: '100%',
     },
 });

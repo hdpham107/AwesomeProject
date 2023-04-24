@@ -21,11 +21,18 @@ export default {
     withdraw: require('../assets/images/icon_withdraw.png'),
     transfer: require('../assets/images/icon_transfer.png'),
     pay: require('../assets/images/icon_pay.png'),
+    // wallet
     cashWallet: require('../assets/images/icon_cash_wallet.png'),
     commissionWallet: require('../assets/images/icon_commission_wallet.png'),
     bonusWallet: require('../assets/images/icon_bonus_wallet.png'),
+    shareWallet: require('../assets/images/icon_share_wallet.png'),
     arrow: require('../assets/images/icon_arrow.png'),
     change: require('../assets/images/icon_change.png'),
     walletLevel: require('../assets/images/wallet_level.png'),
     avatar: require('../assets/images/avatar.png'),
+    // my order
+    unpay: require('../assets/images/myOrder/icon_unpay.png'),
+    processing: require('../assets/images/myOrder/icon_processing.png'),
+    transporting: require('../assets/images/myOrder/icon_transporting.png'),
+    feedback: require('../assets/images/myOrder/icon_feedback.png'),
 }

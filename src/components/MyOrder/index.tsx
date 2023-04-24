@@ -17,10 +17,10 @@ const MyOrder = () => {
                 </TouchableOpacity>
             </View>
             <View style={styles.content}>
-                <OrderItem label="Chờ thanh toán" icon={images.account}/>
-                <OrderItem label="Đang xử lý" icon={images.account}/>
-                <OrderItem label="Đang vận chuyển" icon={images.account}/>
-                <OrderItem label="Chờ đánh giá" icon={images.account}/>
+                <OrderItem label="Chờ thanh toán" icon={images.unpay}/>
+                <OrderItem label="Đang xử lý" icon={images.processing}/>
+                <OrderItem label="Đang vận chuyển" icon={images.transporting}/>
+                <OrderItem label="Chờ đánh giá" icon={images.feedback}/>
             </View>
         </View>
     );
@@ -29,27 +29,34 @@ const MyOrder = () => {
 export default MyOrder;
 
 const styles = StyleSheet.create({
-    containner: {},
+    containner: {
+        justifyContent: 'space-between',
+    },
     header: {
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
+        marginBottom: 10,
     },
     headerTitle: {
         fontFamily: 'Tahoma',
         fontStyle: 'normal',
-        fontWeight: '700',
-        fontSize: 13,
+        fontWeight: '400',
+        fontSize: 14,
         lineHeight: 20,
         color: 'rgba(0, 0, 0, 0.7)',
     },
     headerHistory: {
+        fontFamily: 'Tahoma',
+        fontStyle: 'normal',
+        fontWeight: '400',
+        fontSize: 14,
+        lineHeight: 20,
         color: '#00BFEA',
     },
     content: {
         flexDirection: 'row',
-        justifyContent: 'space-between',
+        justifyContent: 'space-around',
         alignItems: 'center',
-        paddingTop: 10,
     },
 });
